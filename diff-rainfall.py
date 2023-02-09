@@ -5,7 +5,7 @@ import os
 column_rain = 'Total Rain (mm)'
 column_snow = 'Total Snow (cm)'
 column_precip = 'Total Precip (mm)'
-target_column = column_precip
+target_column = column_rain
 
 path_data = r'./data/' # use your path
 all_files_trt = glob.glob(os.path.join(path_data, "toronto/*.csv"))
@@ -32,20 +32,20 @@ df_van_sum_monthly.to_csv('./results/van_sum_monthly.csv', sep='\t')
 
 print("Toronto annual {} mean:".format(target_column))
 print(df_trt_sum.mean())
-#  print("Toronto annual {} sum:".format(target_column))
-#  print(df_trt_sum)
+print("Toronto annual {} sum:".format(target_column))
+print(df_trt_sum)
 
 print()
 print("Vancouver annual {} mean:".format(target_column))
 print(df_van_sum.mean())
-#  print("Vancouver annual {} sum:".format(target_column))
-#  print(df_van_sum)
+print("Vancouver annual {} sum:".format(target_column))
+print(df_van_sum)
 
 print()
 print("Difference between Vancouver and Toronto annual {} mean:".format(target_column))
 print(df_diff_sum.mean())
-#  print("Difference between Vancouver and Toronto annual {} sum:".format(target_column))
-#  print(df_diff_sum)
+print("Difference between Vancouver and Toronto annual {} sum:".format(target_column))
+print(df_diff_sum)
 
 print()
 print("Vancouver over Toronto {} mean".format(target_column), df_van_sum.mean() / df_trt_sum.mean())
